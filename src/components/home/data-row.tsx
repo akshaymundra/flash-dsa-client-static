@@ -26,7 +26,7 @@ const DataRow = ({
                 </TableRow>
             </DialogTrigger>
             <DialogContent
-                className="h-[95%] w-[95%] sm:w-[80%] max-w-full overflow-y-auto rounded-lg"
+                className="h-[95%] w-[95%] sm:w-[80%] max-w-full overflow-y-auto rounded-lg scroll-width-0"
             >
                 <QView
                     index={index}
