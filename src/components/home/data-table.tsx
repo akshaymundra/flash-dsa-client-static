@@ -3,6 +3,7 @@ import DataRow from "./data-row";
 import { useEffect, useState } from "react";
 import SearchFilter from "./search-filter";
 import data from "@/data/flash-dsa-data.json";
+import { DataRowProps } from "@/types";
 
 const DataTable = () => {
     const [filteredData, setFilteredData] = useState(data);
@@ -15,7 +16,7 @@ const DataTable = () => {
             setFilteredData(data)
             return
         } else {
-            const filtered = data?.filter((item: any) => {
+            const filtered = data?.filter((item: DataRowProps) => {
                 return (
                     item?.name.toLowerCase().includes(keywords.toLowerCase()) ||
                     item?.level.toLowerCase().includes(keywords.toLowerCase()) ||
@@ -25,7 +26,7 @@ const DataTable = () => {
             // console.log("filtered data", filtered)
             setFilteredData(filtered)
         }
-    }, [keywords, data])
+    }, [keywords])
 
 
     return (
@@ -50,7 +51,7 @@ const DataTable = () => {
                         </TableRow>
                     </TableHeader>
                     <TableBody>
-                        {filteredData?.map((item: any, index: number) => (
+                        {filteredData?.map((item: DataRowProps, index: number) => (
                             <DataRow
                                 key={index}
                                 data={item}

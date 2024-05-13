@@ -86,7 +86,7 @@ const ReviseFilter = () => {
                 <div className="flex flex-col gap-4">
                     <p>Select Topic</p>
                     <div className={`grid ${styles.filter_grid} gap-4`}>
-                        {topics?.map((topic, i) => (
+                        {topics?.map((topic) => (
                             <CheckboxWithLabel
                                 label={topic.label}
                                 value={topic.value}
@@ -101,7 +101,7 @@ const ReviseFilter = () => {
                 <div className="flex flex-col gap-4">
                     <p>Select Level</p>
                     <div className={`grid  ${styles.filter_grid} gap-4`}>
-                        {levels?.map((level, i) => (
+                        {levels?.map((level) => (
                             <CheckboxWithLabel
                                 label={level.label}
                                 value={level.value}

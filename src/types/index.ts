@@ -3,7 +3,7 @@ export type DataRowProps = {
     name: string;
     topic: string;
     url?: string;
-    level?: string;
+    level: string;
     approach?: string;
     pseudo_code?: string;
 }

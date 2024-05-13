@@ -75,7 +75,7 @@ const QView: React.FC<QViewProps> = ({
                     <AccordionContent>
                         <pre className="text-sm sm:text-md text-gray whitespace-pre-wrap">
                             <code>
-                                {data.pseudo_code && hljs.highlight('plaintext', data?.pseudo_code).code}
+                                {data.pseudo_code && hljs.highlight(data?.pseudo_code, { language: 'plainText' }).code}
                             </code>
                         </pre>
                     </AccordionContent>

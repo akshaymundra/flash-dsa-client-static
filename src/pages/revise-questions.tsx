@@ -1,6 +1,7 @@
 import CardScroller from "@/components/q-view/card-scroller";
 import { useEffect, useState } from "react";
 import data from "@/data/flash-dsa-data.json";
+import { DataRowProps } from "@/types";
 
 const ReviseQuestions = () => {
 
@@ -16,10 +17,10 @@ const ReviseQuestions = () => {
 
         let filterProcessData = data;
         if (!allTopics) {
-            filterProcessData = data.filter((item: any) => topics?.includes(item.topic));
+            filterProcessData = data.filter((item: DataRowProps) => topics?.includes(item.topic));
         }
         if (!allLevels) {
-            filterProcessData = filterProcessData.filter((item: any) => levels?.includes(item.level));
+            filterProcessData = filterProcessData.filter((item: DataRowProps) => levels?.includes(item.level));
         }
 
         setFilteredData(filterProcessData);

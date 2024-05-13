@@ -1,29 +1,17 @@
-import { Cross, X } from "lucide-react";
+import { DataRowProps } from "@/types";
 import QLevel from "../atoms/q-level";
 import QView from "../q-view/q-view";
-import { Button } from "../ui/button";
-import { Dialog, DialogClose, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "../ui/dialog";
+import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
 import { TableCell, TableRow } from "../ui/table";
 
 const DataRow = ({
     data,
     index
 }: {
-    data: any,
+    data: DataRowProps,
     index: number
 }
 ) => {
-
-    // return (
-    //     <TableRow role="button">
-    //         <TableCell>{index + 1}</TableCell>
-    //         <TableCell>{data?.name}</TableCell>
-    //         <TableCell className="capitalize">{data?.topic}</TableCell>
-    //         <TableCell>
-    //             <QLevel level={data?.level} />
-    //         </TableCell>
-    //     </TableRow>
-    // )
 
     return (
         <Dialog>
