@@ -3,6 +3,10 @@ import React from "react";
 import QLevel from "../atoms/q-level";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../ui/accordion';
 import clsx from "clsx";
+import hljs from 'highlight.js'
+import plainText from 'highlight.js/lib/languages/plaintext';
+
+hljs.registerLanguage('plaintext', plainText);
 
 interface QViewProps {
     data: DataRowProps;
@@ -31,14 +35,14 @@ const QView: React.FC<QViewProps> = ({
                         href={data.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-sm sm:text-lg underline text-blue-900 hover:text-blue-700"
+                        className="text-sm sm:text-lg underline text-blue-900 dark:text-blue-500 hover:text-blue-700 dark:hover:text-blue-300"
                     >
                         {data.name}
                     </a>
                 </p>
                 <div className="flex gap-4 items-center">
 
-                    <p className="text-xs sm:text-sm text-gray-500 uppercase">
+                    <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-200 uppercase">
                         {data.topic}
                     </p>
                     {data.level && <QLevel className="px-3" level={data.level} />}
@@ -69,9 +73,11 @@ const QView: React.FC<QViewProps> = ({
                         See Pseudo Code
                     </AccordionTrigger>
                     <AccordionContent>
-                        <p className="text-sm sm:text-md text-gray whitespace-pre-wrap">
-                            {data.pseudo_code}
-                        </p>
+                        <pre className="text-sm sm:text-md text-gray whitespace-pre-wrap">
+                            <code>
+                                {data.pseudo_code && hljs.highlight('plaintext', data?.pseudo_code).code}
+                            </code>
+                        </pre>
                     </AccordionContent>
                 </AccordionItem>
             </Accordion>

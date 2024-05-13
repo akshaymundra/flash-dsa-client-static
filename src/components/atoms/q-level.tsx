@@ -4,7 +4,7 @@ export default function QLevel({
     level = 'medium',
     className
 }: {
-    level: 'easy' | 'medium' | 'hard',
+    level: string,
     className?: string
 }) {
 

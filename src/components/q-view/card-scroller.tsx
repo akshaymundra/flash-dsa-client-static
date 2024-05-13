@@ -23,10 +23,9 @@ const CardScroller: React.FC<CardScrollerProps> = ({
         <div className={`flex-1 flex flex-col`}>
             <div className={`${styles.carousal} flex-1`}>
                 {data?.map((item, index) => (
-                    <AnimatePresence mode='popLayout'>
+                    <AnimatePresence key={index} mode='popLayout'>
                         {index === currentCard &&
                             <motion.div
-                                key={index}
                                 variants={variant}
                                 initial='hidden'
                                 animate='enter'
